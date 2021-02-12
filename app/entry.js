@@ -18,7 +18,9 @@ movingButton.click(() => {
 const loadavg = $('#loadavg');
 
 setInterval(() => {
+  // 今回学ぶ AJAX の部分
+  // /server-status にゲットリクエストを投げる。結果が data に JSON で入ってくる。
   $.get('/server-status', {}, (data) => {
     loadavg.text(data.loadavg.toString());
   });
-}, 10);
+}, 1000);
